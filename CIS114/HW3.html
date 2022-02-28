@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=" description" content="this is a home page for homework 3">
+    <link rel="stylesheet" href="HW3.css">
+
+    <title>Homework 3</title>
+</head>
+<body>
+    <h1> <a href="HW.html"> BACK TO HOME PAGE </a> </h1>
+    <h2> Homework 3</h2>
+    <br>
+    <br>
+    <h2> part 1</h2>
+    <center>
+        <table border="1" cellspacing="5" bgcolor="white">
+            <caption><b>Input Marks</b></caption>
+            <tr>
+                <th rowspan="2">Name</th>
+                <th colspan="4">Score</th>
+      
+            </tr>
+            <tr>
+                <th>Biology</th>
+                <th>English</th>
+                <th>Math</th>
+                <th>javascript</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="aname"></td>
+                <td><input type="text" id="am"></td>
+                <td><input type="text" id="aj"></td>
+                <td><input type="text" id="ad"></td>z
+                <td><input type="text" id="an"></td>
+            </tr>
+            <tr>
+                <th colspan="5" height="30">
+                <input type="submit" value="Add To Table" onclick="Sub()">
+                <input type="reset"></th>
+            </tr>    
+        </table>
+        <br>
+        <table border="1" cellspacing="5" bgcolor="white" 
+               height="100" width="500" cellpadding="5" id="TableScore">
+            <caption><b>Student Data</b></caption>
+            <tr>
+                <th width="180">Name</th>
+                <th>Total</th>
+                <th>Average</th>
+                <th>Pass Or Fail</th>
+        </table>
+        </center>
+        <script type="text/javascript">
+            function Sub(){
+                var n, k, r, e, v, sum, avg;
+                n=(document.getElementById('aname').value);
+                k=parseFloat(document.getElementById('am').value);
+                r=parseFloat(document.getElementById('aj').value);
+                e=parseFloat(document.getElementById('ad').value);
+                v=parseFloat(document.getElementById('an').value);
+                sum=k+r+e+v;
+                avg=sum/4;
+                var newTable = document.getElementById('TableScore');
+                var row = newTable.insertRow(-1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(0);
+                var cell3 = row.insertCell(0);
+                var cell4 = row.insertCell(0);
+      
+                cell4.innerHTML= n;
+                cell3.innerHTML=sum;
+                cell2.innerHTML = avg;
+      
+                if(avg>=70){
+                    cell1.innerHTML="<font color=green>Pass</font>";
+                }else{
+                    cell1.innerHTML="<font color=red>Fail</font>";
+                }
+            }
+        </script>
+       
+       <script>
+ 
+        function algorithm()
+        {
+            let commission, earnings, gross_sales_in_the_week, sold_1_items, sold_2_items;
+            let sold_3_items, sold_4_items, weekly_salary;
+            sold_1_items = parseFloat (document.form1.sold_1_items.value);
+            sold_2_items = parseFloat (document.form1.sold_2_items.value);
+            sold_3_items = parseFloat (document.form1.sold_3_items.value);
+            sold_4_items = parseFloat (document.form1.sold_4_items.value);
+            weekly_salary=200;
+            gross_sales_in_the_week=sold_1_items*239.99+sold_2_items*129.75+sold_3_items*99.95+sold_4_items*350.89;
+            commission=gross_sales_in_the_week*0.09;
+            earnings=weekly_salary+commission;
+            document.form1.commission.value = commission;
+            document.form1.earnings.value = earnings;
+            document.form1.gross_sales_in_the_week.value = gross_sales_in_the_week;
+            document.form1.weekly_salary.value = weekly_salary;
+        }
+         
+                </script>
+</head>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2> part 2</h2>
+<body>
+    <form name="form1">
+        <table style="text-align: left; margin-left: auto; margin-right: auto;">
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="sold_1_items">Enter the value of sold 1 items:</label>
+                    </td>
+                    <td>
+                        <input name="sold_1_items" required="required" step="0.000001" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="sold_2_items">Enter the value of sold 2 items:</label>
+                    </td>
+                    <td>
+                        <input name="sold_2_items" required="required" step="0.000001" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="sold_3_items">Enter the value of sold 3 items:</label>
+                    </td>
+                    <td>
+                        <input name="sold_3_items" required="required" step="0.000001" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="sold_4_items">Enter the value of sold 4 items:</label>
+                    </td>
+                    <td>
+                        <input name="sold_4_items" required="required" step="0.000001" type="number" />
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td colspan="2" rowspan="1">
+                        <input value="Process" type="button" onclick="algorithm();" />
+                        <input type="reset" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="commission">Value of commission:</label>
+                    </td>
+                    <td>
+                        <input name="commission" step="0.000001" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="earnings">Value of earnings:</label>
+                    </td>
+                    <td>
+                        <input name="earnings" step="0.000001" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="gross_sales_in_the_week">Value of gross sales in the week:</label>
+                    </td>
+                    <td>
+                        <input name="gross_sales_in_the_week" step="0.000001" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="weekly_salary">Value of weekly salary:</label>
+                    </td>
+                    <td>
+                        <input name="weekly_salary" step="0.000001" type="number" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>  
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2> part 3</h2>
+<body>
+
+    <p>Type a value in the Fahrenheit field to convert the value to Celsius:</p>
+    
+    <p>
+      <label>Fahrenheit</label>
+      <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+    </p>
+    <p>Celcius: <span id="outputCelcius"></span></p>
+    <script>
+      function temperatureConverter(valNum) {
+      valNum = parseFloat(valNum);
+      document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
+    }
+    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2> For whatever reson the temperare gage DOES NOT WANT TO CENTER ALIGN!!!!!!!
+        ive been at it for several days and for the life of me cant figure it out, this is the same problem i had with hw 2
+    </h2>
+    </body>
+
+</html>

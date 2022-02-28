@@ -1,0 +1,28 @@
+body{
+    background-color: rgba(128, 128, 128, 0.781);
+}
+@font-face {
+    font-family: "racing";
+    src: url(fonts/Racing_Sans_One/RacingSansOne-Regular.ttf);
+}
+
+a {
+color: rgba(37, 35, 33, 0.699);
+text-decoration: none;
+font-size: 50px;
+margin: 10px;
+font-family: "racing";
+}
+
+ a:hover{
+color:rgb(136, 61, 0);
+padding-left: 10px;
+transition: .50s;
+ }
+
+ h2{
+     font-size: 200px;
+     text-align: center;
+     font-family: "racing";
+     color: rgb(206, 99, 0);
+ }
