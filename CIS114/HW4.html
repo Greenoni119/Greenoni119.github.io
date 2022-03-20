@@ -12,5 +12,86 @@
 <body>
     <h1> <a href="HW.html"> BACK TO HOME PAGE </a> </h1>
     <h2> Homework 4</h2>
+
+    <h3> PART 1A </h3>
+    <script>
+      var sum = 0
+        for ( var number = 5; number <= 25; number += 4)
+    {
+          sum += number;
+    }
+          document.write("Addition: " + sum );
+    </script>
+     <br>
+    
+    <script>
+      var product = 1;
+            for ( var number = 5 ; number <= 25 ; number += 4 )
+              {
+                    product *= number; 
+                     
+              }
+              product= product.toLocaleString();
+              document.write('multiplication: ' + product);
+              
+     </script>
+    
+    <br>
+    <br>
+    <h3> PART 1B </h3>
+    
+    <script>
+    var product, sum, x;
+    product = 1; 
+    x = 3;
+    sum = 0;
+      while (x <= 18)
+      {
+        product *= x
+        sum += x
+        x= x + 3
+      }
+      product= product.toLocaleString();
+      document.write(" multiplication: " + product + "<br> <br>" + "addition: " + sum);
+    
+     
+    
+    </script>
+    
+    
+    <br>
+    <br>
+    
+    
+    <h3> PART 2 </h3>
+    
+    <main id="output">
+      <script>
+          var p = 1000
+          var A
+          var output = "";
+          var r
+          var n
+          
+    for (r=.05; r<=.07; r+=.01) {
+    output +="<br>";
+    output += "<table><tr><th>Year</th><th>Amount on Deposit</th><th>Interest Rate</th></tr>";
+    
+    for (n=1; n<=10; n++) {
+      A = p*(1+r)**n;
+      A = A.toLocaleString(undefined, {maximumFractionDigits:2, minimumFractionDigits:2});
+    
+      output += "<tr><td>" + n + "</td><td>" + A + "</td><td>" + r.toFixed(2) + "</td></tr>";
+    }
+    
+    output += "</table>";
+    
+    }
+    
+    document.getElementById("output").innerHTML = output; 
+    
+    </script>
+    </main>
+
 </body>
 </html>

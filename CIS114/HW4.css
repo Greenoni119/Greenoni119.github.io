@@ -26,3 +26,37 @@ transition: .50s;
      font-family: "racing";
      color: rgb(206, 99, 0);
  }
+
+
+ table, tr, td, td, th {
+    border: 2px solid rgb(2, 2, 2); 
+    font-size: 20pt;
+}
+
+th {
+    background-color: rgb(230, 231, 235);color: rgb(19, 10, 10);
+    padding: 5px; 
+    border-spacing: 10px;
+}
+
+table { 
+    align-content: center ;
+    border-collapse: collapse; 
+    
+}
+
+tr:nth-child(even) {
+    background-color: rgb(201, 201, 190);
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(185, 182, 177);
+}
+
+a {
+    font-size: 20pt;
+}
+
+ h3 {
+     font-size: 20pt;
+ }
