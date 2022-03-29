@@ -1,57 +1,70 @@
-*{
-    padding: 0%;
-    margin: 0%;
-}
+
 @font-face {
     font-family: "racing";
     src: url(fonts/Racing_Sans_One/RacingSansOne-Regular.ttf);
 }
 
 body{
-    background-color: rgb(0, 0, 0);
-    background-image: url("IMG_4474.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    background-position:center;
-    min-width: fit-content;
-}
+    background-color: rgba(128, 128, 128, 0.78);
+
     
+}
+
 h1{
 font-family: "racing";
 font-size: 200px;
 text-align: center;
-padding-bottom: 200px;
-padding-top: 100px;
-color: rgb(206, 99, 0);
+padding-bottom:50px;
+color: rgb(0, 0, 0);
 }
 
-.link{
-    color: rgb(206, 99, 0);
-    font-size: 30px;
-    cursor: pointer;
-    text-decoration: none;
-    }    
     
 ul{
 text-align: center;
-display: inline;
+display: inline-block;
+list-style-type:none;
 }
 
 Ul li{
     list-style: none;
     display: inline-block;
-    padding-bottom: 200px;
+    padding-bottom: 2;
+    padding-top: 10%;
 }
 
 ul li a{
     font-family: "racing";
      text-align: center;
-     padding: 10rem 10rem ;
+     padding-right: 10%;
+     color: rgb(0, 0, 0);
+     font-size: 200px;
+     cursor: pointer;
+     text-decoration: none;
+     
 }
 
 ul li a:hover{
-color:rgb(94, 42, 0);
-transition: .50s;
-transform: rotate(45deg);
+color: rgb(206, 99, 0);
+transition: .55s;
+}
+
+.hoverani{
+    display: inline-block;
+    position:relative;
+    color: #808080c7;
+  }
+.hoverani:after{
+    content: '';
+  position: absolute;
+  width: 85%;
+  transform: scaleX(0);
+  height: 6px;
+  bottom: 0;
+  left: 0;
+  background-color:#ce6300;
+  transition: transform 0.20s ease-in-out;
+}
+
+.hoverani:hover:after{
+    transform: scaleX(.7);
 }

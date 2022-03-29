@@ -14,11 +14,11 @@ margin: 10px;
 font-family: "racing";
 }
 
- a:hover{
-color:rgb(136, 61, 0);
-padding-left: 10px;
-transition: .50s;
- }
+a:hover{
+    color:rgb(206, 99, 0);
+    padding-left: 10px;
+    transition:0.20s ease-in-out;
+     }
 
  h2{
      font-size: 200px;
@@ -26,3 +26,23 @@ transition: .50s;
      font-family: "racing";
      color: rgb(206, 99, 0);
  }
+ .hoverani{
+    display: inline-block;
+    position:relative;
+    color: #000000c7;
+  }
+.hoverani:after{
+    content: '';
+  position: absolute;
+  width: 85%;
+  transform: scaleX(0);
+  height: 6px;
+  bottom: 0;
+  left: 0;
+  background-color:#ce6300;
+  transition:0.20s ease-in-out;
+}
+
+.hoverani:hover:after{
+    transform: scaleX(1);
+}
