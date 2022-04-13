@@ -17,9 +17,30 @@ font-family: "racing";
 a:hover{
     color:rgb(206, 99, 0);
     padding-left: 10px;
-    transition:0.20s ease-in-out;
+    transition:0.20s ease-in-out;;
      }
-
+     
+     .hoverani{
+        display: inline-block;
+        position:relative;
+        color: #000000c7;
+      }
+    .hoverani:after{
+        content: '';
+      position: absolute;
+      width: 85%;
+      transform: scaleX(0);
+      height: 6px;
+      bottom: 0;
+      left: 0;
+      background-color:#ce6300;
+      transition:0.20s ease-in-out;
+    }
+    
+    .hoverani:hover:after{
+        transform: scaleX(1);
+    }
+    
 
  h2{
      font-size: 200px;
@@ -27,23 +48,35 @@ a:hover{
      font-family: "racing";
      color: rgb(206, 99, 0);
  }
- .hoverani{
-    display: inline-block;
-    position:relative;
-    color: #000000c7;
-  }
-.hoverani:after{
-    content: '';
-  position: absolute;
-  width: 85%;
-  transform: scaleX(0);
-  height: 6px;
-  bottom: 0;
-  left: 0;
-  background-color:#ce6300;
-  transition:0.20s ease-in-out;
-}
 
-.hoverani:hover:after{
-    transform: scaleX(1);
+ #codenameInvalid{
+    display: none; 
+    color: rgb(255, 132, 0);
+ }
+
+ #locationInvalid{
+    display: none; 
+    color: rgb(255, 132, 0);
+ }
+
+ #villianInvalid{
+    display: none; 
+    color: rgb(255, 132, 0);     
+ }
+
+ #partnerInvalid{
+    display: none; 
+    color: rgb(255, 132, 0);
+ }
+ #done{
+    font-size: 20px; 
+    color: rgb(58, 238, 58); 
+    display: none;
+ }
+
+ h3{
+    font-size: 50px;
+    text-align: center;
+    font-family: "racing";
+    color: rgb(206, 99, 0);
 }

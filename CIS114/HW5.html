@@ -12,5 +12,259 @@
 <body>
     <h1> <a href="HW.html" class="hoverani"> BACK TO HOME PAGE </a> </h1>
     <h2> Homework 5</h2>
+
+<!--this is part one -->
+<script>
+    function ifOneElementChecked(input) {
+        for (let a = 0; a < input.length; a++) {
+     if (input[a].checked || input[a].selected) 
+          {
+          return true;
+            }
+        }
+        return false;
+    }
+    function process() 
+    {
+        let codename = document.getElementById("codename").value;
+             let locationSelected =ifOneElementChecked(document.getElementsByName("location"));
+                let partnerSelected =ifOneElementChecked(document.getElementsByClassName("partner"));
+                     let villianSelected =ifOneElementChecked(document.getElementsByClassName("villian"));
+    
+        if (!codename) 
+        {
+            document.getElementById("codenameInvalid")
+            .style.display = "block";
+        } 
+        else
+         {
+            document.getElementById("codenameInvalid")
+            .style.display = "none";
+        }
+    
+        if (!locationSelected) 
+        {
+            document.getElementById("locationInvalid")
+            .style.display = "block";
+        } 
+        else {
+            document.getElementById("locationInvalid")
+            .style.display = "none";
+        }
+    
+        if (!partnerSelected)
+         {
+            document.getElementById("partnerInvalid")
+            .style.display = "block";
+        }
+        else 
+        {
+            document.getElementById("partnerInvalid")
+            .style.display = "none";
+        }
+    
+        if (!villianSelected)
+         {
+            document.getElementById("villianInvalid")
+            .style.display = "block";
+        } 
+        else 
+        {
+            document.getElementById("villianInvalid")
+            .style.display = "none";
+        }
+    
+        if (codename &&locationSelected&& partnerSelected&& villianSelected) 
+        {
+            document.getElementById("done")
+            .style.display = "block";
+        } 
+        else 
+        {
+            document.getElementById("done")
+            .style.display = "none";
+        }
+    }
+    
+    function reset() 
+    {
+        document.getElementByName("thisform").reset();
+    }
+
+</script>
+
+<div>
+    <form name="thisform">
+        <h3>Input text box</h3>
+
+        <p>Enter your Codename :</p>
+        <table>
+        <tr>
+         <td><label for="codename">Codename:</label></td>
+         <td><input type="text" name="codename" id="codename"></td>
+        </tr>
+        </table>
+
+        <p id="codenameInvalid"> invalid Codename, enter your codename</p>
+
+        <h3>Radio Buttons</h3>
+
+        <p>pick your mission location</p>
+
+        <input type="radio" id="Japan" name="location" value="JAPAN">
+        <label for="japan">Japan</label>
+
+        <input type="radio" id="Africa" name="location" value="AFRICA">
+        <label for="africa"> Africa </label>
+
+        <input type="radio" id="india" name="location" value="INDIA">
+        <label for="india"> India </label>
+
+        <p id="locationInvalid"">invalid location, pick one </p>
+
+        <h3>Checkboxes</h3>
+
+        <p>choose the partner you would like to take on this mission</p>
+
+        <input type="checkbox" id="partner_1" class="partner" name="partner_1" value="jamesBond">
+        <label for="partner_1"> James Bond</label>
+
+        <input type="checkbox" id="partner_2" class="partner" name="partner_2" value="Batman">
+        <label for="partner_2"> Batman </label>
+
+        <input type="checkbox" id="partner_3" class="partner" name="partner_3" value="jim">
+        <label for="partner_3"> Jim from accounting</label>
+
+        <p id="partnerInvalid"> invalid selection, pick your partner</p>
+
+        <h3>Select boxes</h3>
+
+        <p><label for="villian">Choose your villian:</label></p>
+
+        <p>
+            <select id="villian" name="villian">
+        <option value="">choose one </option>
+        <option value="darthvader" class="villian">darth vader</option>
+         <option value="redskull" class="villian">red skull</option>
+        <option value="doctoraoctopus" class="villian">doctor octopus </option>
+        <option value="karen" class="villian">auntie karen</option>
+            </select>
+        </p>
+
+        <p id="villianInvalid""> you need a villian to beat!! pick one</p>
+
+        <p>
+     <input type="button" onclick="process()" value="Submit">
+     <input type="button" onclick="reset()" value="Reset form">
+        </p>
+    </form>
+</div>
+
+<br>
+<div id="done" >
+    thank you special agent, good luck on your mission
+</div>
+
+
+<!--this is part two -->
+<script>
+    function onSelectChange() {
+    let url = document.getElementById("chosen").value;
+    if (url != "nothing") {
+     window.open(url, "_blank");
+        }
+    }
+    function onButtonClick() {
+    let url = document.getElementById("chosen2").value;
+    if (url != "nothing") {
+     window.open(url, "_blank");
+        }
+    }
+</script>
+<h3>Pull Down Menu</h3>
+
+
+<p>pick your favorite social media!!</p>
+
+<form>
+    <select id="chosen" onchange="onSelectChange()">
+<option value="">choose one </option>
+ <option value="https://www.facebook.com/"> facebook</option>
+ <option value="https://www.instagram.com/">instagram</option>
+<option value="https://www.twitter.com/">twitter</option>
+    </select>
+</form>
+
+<h3>Pull Down Menu #2 </h3>
+<p>pick your favorite social media!!</p>
+
+<form>
+    <select id="chosen2">
+    <option value="">choose one </option>
+    <option value="https://www.facebook.com/"> facebook</option>
+    <option value="https://www.instagram.com/">instagram</option>
+   <option value="https://www.twitter.com/">twitter</option>
+    </select>
+    <input type="button" onclick="onButtonClick()" value="Submit">
+</form>
+
+
+<!-- this is part 3 -->
+<h3>Information about states</h3>
+
+<form>
+    <input id="state_input">
+    <label for="state_input">Enter a state name or the two-letter designator for that state</label>
+    <br>
+
+    <input type="button" onclick="showStateInfo()" value="State Info">
+    <br>
+    <br>
+</form>
+
+<div id="answers"></div>
+
+<script>
+    let stateInfo = 
+    [
+        ["AL", "Alabama", "Montgomery", "4,903,185"],
+
+        ["AK", "Alaska", "Juneau", "731,545"],
+
+        ["AZ", "Arizona", "Phoenix", "7,278,717"],
+
+        ["AR", "Arkansas", "Little Rock", "3,017,825"],
+
+        ["CA", "California", "Sacramento", "39,512,223"],
+
+        ["CO", "Colorado", "Denver", "5,758,736"],
+    ];
+
+    function showStateInfo() {
+        let stateInput = document.getElementById("state_input").value.trim().toLowerCase();
+
+        let gotStateInfo = null;
+        for (let a = 0; a <stateInfo.length; a++) {
+        if (stateInput == stateInfo[a][0].toLowerCase() || stateInput == stateInfo[a][1].toLowerCase()) 
+        {
+         gotStateInfo =stateInfo[a];
+        break;
+            }
+        }
+        if (gotStateInfo) {
+            document.getElementById("answers").innerText = "Heres the data on this state: \n "+
+                " State designator: " 
+                + gotStateInfo[0] +
+                " - Name of state: "
+                 + gotStateInfo[1] +
+                " - Name of the state Capital: "
+                 + gotStateInfo[2] +
+                " - Population of the state: "
+                 + gotStateInfo[3];
+        } else {
+            document.getElementById("answers").innerText = "hmmm doesnt look like i got any data on that state, how about trying these instead!! AL, AK, AZ, AR, CA, CO";
+        }
+    }
+</script>
 </body>
 </html>
