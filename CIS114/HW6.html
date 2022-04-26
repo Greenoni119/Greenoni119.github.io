@@ -6,11 +6,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name=" description" content="this is a home page for homework 6">
     <link rel="stylesheet" href="HW6.css">
-    
     <title>Homework 6</title>
 </head>
 <body>
     <h1> <a href="HW.html" class="hoverani"> BACK TO HOME PAGE </a> </h1>
     <h2> Homework 6</h2>
+<script>       
+function getVals() 
+{        
+var regNum = parseFloat(document.forms["floating_form"].num_input.value);            
+ var numRegExp = 
+ new RegExp(/^\d*\.\d{4}\d*$/);           
+ if (numRegExp.test(regNum)) {
+   document.getElementById('input_num').value = 
+   regNum;
+  document.getElementById('rounded_num').value = 
+  Math.round(regNum);
+ document.getElementById('rounded_tenth').value = 
+ regNum.toFixed(1);
+ document.getElementById('rounded_hundredth').value = 
+ regNum.toFixed(2);
+document.getElementById('rounded_thousandth').value = 
+regNum.toFixed(3);
+document.getElementById('square_root').value = 
+Math.round(Math.sqrt(regNum));              
+ document.getElementById('errmsg').innerHTML=
+ "";
+ }        
+else {
+ document.getElementById('errmsg').innerHTML=
+ "This is invalid, You need to enter a number with at least four or more decimal spaces.";
+ document.getElementById('input_num').value = 
+ "not valid";
+document.getElementById('rounded_num').value = 
+"not valid";
+ document.getElementById('rounded_tenth').value = 
+ "not valid";
+ document.getElementById('rounded_hundredth').value = 
+ "not valid";
+document.getElementById('rounded_thousandth').value = 
+"not valid";
+document.getElementById('square_root').value = 
+"not valid";
+}
+ }
+    </script>
+	<header>
+		<h1>Part 1</h1>
+	</header>
+	<main>
+        <form id = "floating_form" method="get">
+ Enter a number to at least 4 decimal places -<br>
+ <input type="text" name="num_input" id="num_input" required>
+   <br><br>
+     <input type="button" onclick="getVals()" value="Submit">&nbsp;&nbsp;&nbsp;
+     <input type="reset" id="clear" value="Reset" onClick="window.location.reload()">          
+ </form>
+    <br>   
+    <div class= "error" id="errmsg"></div>
+    <br>
+  <legend> Diffrent values of your number - </legend> <br>
+            Your number -<br>
+  <input type="text" name="result_display" id="input_num" disabled><br><br>
+            Rounded to nearest integer - <br>
+<input type="text" name="result_display" id="rounded_num" disabled><br><br>
+            Rounded to nearest tenth -<br>
+<input type="text" name="result_display" id="rounded_tenth" disabled><br><br>
+            Rounded to nearest hundredth -<br>
+  <input type="text" name="result_display" id="rounded_hundredth" disabled><br><br>
+            Rounded to nearest thousandth -<br>
+<input type="text" name="result_display" id="rounded_thousandth" disabled><br><br>
+            Square root rounded to nearest integer -<br>
+ <input type="text" name="result_display" id="square_root" disabled><br>    
+	</main>
+
+
+    <script>      
+function charSearch() {            
+var myText = document.forms["my_form"].user_text.value.toLowerCase();
+var searchItem = document.forms["my_form"].look_char.value.toLowerCase(); 
+var searchCount = 0;          
+ for (var a = 0; a < myText.length; a++) {
+if (myText.charAt(a) == searchItem) {
+     searchCount++;
+}
+}         
+if (searchCount != 0) {
+document.getElementById('inst_found').value = searchCount;
+            }
+ else {
+var notFoundWindow = 
+window.open("about:blank", "_blank", "height=100, width=300");
+ notFoundWindow.document.write('The character " ' + searchItem + ' " was not found');
+ document.getElementById('inst_found').value = "";
+            }
+        }
+    </script>
+</head>
+<br><br>
+<hr>
+<br><br>
+<h1>Part 2</h1>
+	</header>
+	<main>  
+    <section>
+        <form id = "my_form" method="get">          
+    <label for "user_text">Enter Your Text:</label>
+                <br>
+     <textarea id="user_text" name="user_text"></textarea>
+                <br><br>             
+ <label for "look_char">Enter the character you would like to look for:</label>
+                <br>
+        <input type="text" name="look_char" id="look_char" required>
+    <br><br>          
+ <input type="button" onclick="charSearch()" 
+ value="Submit">&nbsp;&nbsp;&nbsp;
+ <input 
+ type="reset" id="clear" value="Clear Input" onClick="window.location.reload()">
+        </form>
+    </section>
+    <br>
+    <section>
+           <label for "instances_found" >Number of times the character is in the textbox:</label><br>
+            <input type="text" name="inst_found" id="inst_found" disabled><br>
+        
+    </section>
+	</main>
 </body>
 </html>

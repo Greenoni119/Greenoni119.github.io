@@ -25,11 +25,13 @@ a:hover{
      font-family: "racing";
      color: rgb(206, 99, 0);
  }
+ 
  .hoverani{
     display: inline-block;
     position:relative;
     color: #000000c7;
   }
+
 .hoverani:after{
     content: '';
   position: absolute;
@@ -44,4 +46,14 @@ a:hover{
 
 .hoverani:hover:after{
     transform: scaleX(1);
+}
+
+#errmsg{
+color: rgb(181, 14, 14);
+}
+
+h1{
+    font-size: 50px;
+    font-family: "racing";
+    color: rgb(206, 99, 0);
 }
