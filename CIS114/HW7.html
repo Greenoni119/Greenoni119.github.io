@@ -1,16 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lng="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name=" description" content="this is a home page for homework 7">
     <link rel="stylesheet" href="HW7.css">
-
     <title>Homework 7</title>
 </head>
 <body>
     <h1> <a href="HW.html" class="hoverani"> BACK TO HOME PAGE </a> </h1>
     <h2> Homework 7</h2>
+</head>
+<body>
+<script>
+    function redo() {
+        let familyPointed = 
+        document.getElementById("fonts");
+        let area = "";
+        switch 
+        (familyPointed.options[familyPointed.selectedIndex].value) 
+        {
+case "serif":
+area = 
+"serif";
+ break;
+case "sansSerif":
+area = 
+"sansSerif";
+ break;
+case "racing":
+ area = 
+ "racing";
+ break;
+case "cambria":
+    area = 
+"cambria";
+ break;
+        }
+        let textClass = area;
+        let background = 
+        document.querySelector('input[name="background"]:checked');
+        if (background)
+         {
+        textClass += 
+        " " + 
+        background.id;
+        }
+        if 
+        (document.getElementById("Italic").checked)
+         {
+        textClass +=
+         " Italic";
+        }        
+        if 
+        (document.getElementById("Bold").checked)
+         {
+        textClass += 
+        " Bold"; 
+        }
+        if 
+        (document.getElementById("Underline").checked)
+         {
+        textClass +=
+         " Underline";
+        }  
+        document.getElementById("paragraph").className = textClass;
+    }
+</script>
+<h2>Part 1</h2>
+    <H1>Pick a background color you like<H1>
+    
+        <input type="radio" id="White" name="background" onchange="redo()">
+        <label for="White">Brown</label>
+    
+        <input type="radio" id="Yellow" name="background" onchange="redo()">
+        <label for="backgroundColorYellow">Green</label>
+   
+        <input type="radio" id="Pink" name="background" onchange="redo()">
+        <label for="Pink"> Baby blue</label>
+    
+<br>
+    <h1 for="fonts"> Choose the Font You like</h1>   
+        <select id="fonts" name="fonts" onchange="redo()">
+            <option value="sansSerif">Sans serif</option>
+            <option value="racing"> racing</option>
+            <option value="serif">Serif</option>
+            <option value="cambria">Cambria</option>
+        </select>
+<br>
+    <H1> Choose the font style you like</H1> 
+    <h1>
+       <input type="checkbox" id="Underline" name="Underline" onchange="redo()">
+        <label for="Underline">Underlined</label>
+   
+        <input type="checkbox" id="Bold" name="Bold" onchange="redo()">
+        <label for="Bold">Bold</label>
+    
+        <input type="checkbox" id="Italic" name="Italic" onchange="redo()">
+        <label for="Italic">Italicized</label>
+        </h1>
+        <br> <br>
+    <div id="paragraph">
+This is a random paragraph that i am making up on the spot just to improve my typing skills. 
+    I have this awesome keyboard that my girlfriend bought me for christmas and it sounds so awesome when i type.
+        I really love this class and i am honestly sad for it to be ending this soon. 
+           I will be doing my best on practacing javascript on my own after this class is done.
+             As i am typing this sentence my girlfriend has chalanged me to a type test match, whoever wins buys sushi tonight.  
+    </div>
+<script>
+    redo();
+</script>
+<h2>Part 2</h2>
+
+    <div id="form" class="hide">
+<form>
+    <p>
+      Please enter your name and login
+</p>
+ <p>
+    <input type="text" id="name" name="name">
+    <label for="name">Name</label>
+</p>
+ <p>
+  <input type="text" id="login" name="login">
+<label for="login">Login</label>
+ </p>
+ <p>
+ <button type="button" id="Button" onclick="Submiting()">Submit</button>
+ </p>
+</form>
+    </div>
+    <div id="greeting" class="hide">
+        Welcome back <span id="greetingYou"></span>
+    </div>
+    
+    <script>
+    function Submiting() 
+    {
+     let you = 
+     document.getElementById("name").value;
+    let login = document.getElementById("login").value;
+     document.cookie = "username="
+     + you + 
+     "; path=/";
+    document.cookie = "login=" 
+     + login + 
+    "; path=/";
+    history.go(0);
+  }
+ function  cookieName() 
+ {
+ let cookie = "username=";
+let decomp = decodeURIComponent(document.cookie);
+ let array = decomp.split(';');
+ for (let a = 0; a < array.length; a++) 
+ {
+  let string = array[a];
+while (string.charAt(0)== ' ') 
+{
+ string = string.substring(1);
+ }
+if (string.indexOf(cookie)== 0) 
+{
+ return string.substring(cookie.length, string.length);
+ }
+}
+ return "";
+  }
+let name=cookieName();
+if (name=="") 
+{
+document.getElementById("form").className = "";
+ document.getElementById("greeting").className = "hide";
+ } else
+ {
+document.getElementById("greetingYou").innerText = name;
+document.getElementById("form").className = "hide";
+document.getElementById("greeting").className = "";
+}
+</script>
+
 </body>
 </html>

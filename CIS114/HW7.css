@@ -46,3 +46,51 @@ a:hover{
 .hoverani:hover:after{
     transform: scaleX(1);
 }
+
+.White {
+    background-color: rgb(126, 108, 49);
+}
+
+.Yellow {
+    background-color: rgb(50, 92, 47);
+}
+
+.Pink {
+    background-color: rgb(108, 164, 213);
+}
+
+.serif {
+    font-family: serif;
+}
+
+.sansSerif {
+    font-family: sans-serif;
+}
+
+.racing {
+    font-family: "racing";
+    src: url(fonts/Racing_Sans_One/RacingSansOne-Regular.ttf);
+}
+
+.cambria {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
+}
+
+.Italic {
+    font-style: italic;
+}
+
+.Bold {
+    font-weight: bold;
+}
+
+.Underline {
+    text-decoration: underline;
+}
+#paragraph{
+    max-width: 50%;
+}
+.hide {
+    display: none;
+}
