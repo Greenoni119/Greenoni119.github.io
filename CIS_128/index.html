@@ -13,11 +13,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+    <script   src="https://code.jquery.com/jquery-3.6.3.min.js"   integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="   crossorigin="anonymous"></script>
     <script src="index.js"></script>
     <title>CIS 128 HW WEBSITE</title>
 </head>
 <body>
-    <h1>CIS 128</h1>
+    <h1 id="heading">CIS 128</h1>
     <div id="wrapper">
         <div id="contentOne">
             <img id="myFace" src="images/myface.png" alt="image of my face">
@@ -36,7 +37,7 @@
     </ul>
     <h1>Resources</h1>
     <ul>
-        <li>
+        <li class="heading">
             <a href="https://www.w3schools.com" target="_blank" rel="noopener">Web 3 Schools</a>
             <p> Web3 is the best online resourse that answers the most common and complex questions in coding. they have step by step tutorials and open source code snippets for you to reference in your own projects. </p>
         </li>
@@ -53,5 +54,6 @@
             <p> Web dev Simplified is a youtube channel that helps frontend developers with complex or simple tasks when it comes to functionality and styling.</p>
         </li>  
     </ul>
+    <button id="animate-button">Animate</button>
 </body>
 </html>

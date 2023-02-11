@@ -2,6 +2,7 @@
 * {
     font-size: 25px;
     font-family: 'Nabla', cursive;
+    
 }
 html{
     min-height: 100%;
@@ -53,7 +54,12 @@ p{
     color: rgba(255, 200, 0, 0.649);
     font-size: .7rem;
 }
-
+button{
+    background-color: rgba(75, 72, 72, 0.773);
+    border-radius: 10%;
+    font-size: 2rem;
+    margin: 20px;
+}
 @media only screen and (max-width: 740px) {
 
     h1{
@@ -82,4 +88,7 @@ p{
         font-size: 1rem;
         transition: .5s;
     }
+   button{
+        font-size: 1rem;
+    } 
 }
